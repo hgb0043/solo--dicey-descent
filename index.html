@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dicey Descent Scoreboard</title>
+  <link rel="stylesheet" href="dicey-descent.css" />
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+
+</head>
+<body>
+  <div class="container">
+    <div class="scoreboard">
+      <h1>Dicey Descent Scoreboard</h1>
+      <div class="players">
+        <div class="player blue">
+          <h2>Blue Player</h2>
+          <p class="score" id="js-score-1">Lives Remaining: 2</p>
+        </div>
+        <div class="player red">
+          <h2>Red Player</h2>
+          <p class="score" id="js-score-2">Lives Remaining: 2</p>
+        </div>
+        <div class="player green">
+          <h2>Green Player</h2>
+          <p class="score" id="js-score-3">Lives Remaining: 2</p>
+        </div>
+        <div class="player yellow">
+          <h2>Yellow Player</h2>
+          <p class="score" id="js-score-4">Lives Remaining: 2</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hidden Round Displays -->
+    <div class="round-display js-round-display">
+      <h1>Round 1</h1>
+      <div class="players">
+        <div class="player blue">
+          <h2>Blue Player</h2>
+          <p id="outcome-1-1" class="outcome"></p>
+          <!-- <i class="fa-solid fa-cloud fa-3x hide-cloud" id="cloud-1"></i> !-->
+        </div>
+        <div class="player red">
+          <h2>Red Player</h2>
+          <p id="outcome-1-2" class="outcome"></p>
+          <!-- <i class="fa-solid fa-cloud fa-3x hidden" id="cloud-2"></i> !-->
+        </div>
+        <div class="player green">
+          <h2>Green Player</h2>
+          <p id="outcome-1-3" class="outcome"></p>
+          <!-- <i class="fa-solid fa-cloud fa-3x hidden" id="cloud-3"></i> !-->
+        </div>
+        <div class="player yellow">
+          <h2>Yellow Player</h2>
+          <p id="outcome-1-4" class="outcome"></p>
+          <!-- <i class="fa-solid fa-cloud fa-3x hidden" id="cloud-4"></i> !-->
+        </div>
+      </div>
+    </div>
+
+    <div class="round-display js-round-display">
+      <h1>Round 2</h1>
+      <div class="players">
+        <div class="player blue">
+          <h2>Blue Player</h2>
+          <p id="outcome-2-1" class="outcome"></p>
+        </div>
+        <div class="player red">
+          <h2>Red Player</h2>
+          <p id="outcome-2-2" class="outcome"></p>
+        </div>
+        <div class="player green">
+          <h2>Green Player</h2>
+          <p id="outcome-2-3" class="outcome"></p>
+        </div>
+        <div class="player yellow">
+          <h2>Yellow Player</h2>
+          <p id="outcome-2-4" class="outcome"></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="round-display js-round-display">
+      <h1>Round 3</h1>
+      <div class="players">
+        <div class="player blue">
+          <h2>Blue Player</h2>
+          <p id="outcome-3-1" class="outcome"></p>
+        </div>
+        <div class="player red">
+          <h2>Red Player</h2>
+          <p id="outcome-3-2" class="outcome"></p>
+        </div>
+        <div class="player green">
+          <h2>Green Player</h2>
+          <p id="outcome-3-3" class="outcome"></p>
+        </div>
+        <div class="player yellow">
+          <h2>Yellow Player</h2>
+          <p id="outcome-3-4" class="outcome"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Play Button -->
+    <button class="play-button js-play-button">PLAY ROUND 1</button>
+
+  </div>
+
+  <script src="dicey-descent.js"></script>
+
+</body>
+</html>
