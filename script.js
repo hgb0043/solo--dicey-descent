@@ -1,5 +1,3 @@
-//Change score to position
-
 let randomNumber
 let currentOutcomesArray = localStorage.getItem('current-outcomes-array') || [];
 let outcomeElement;
@@ -13,17 +11,10 @@ let survivingArray1 = [];
 let survivingArray2 = [];
 let shuffledArray1 = [];
 
-/*
-if (localStorage.getItem('roundsDisplayed') === 'true') {
-  displayRounds();
-}
-  */
-
 function runGameRound() {
   eliminatingArray = [];
   shuffledEliminatingArray = [];
 
-  // displayRounds();
   determineRound();
   determineOutcomes();
   displayOutcomes();
@@ -36,26 +27,18 @@ document.querySelector('.js-play-button').addEventListener('click', () => {
   runGameRound();
 });
 
-/*
-function displayRounds() {
-  const roundDisplays = document.querySelectorAll('.js-round-display');
-
-  Removes rounds 1, 2, and 3 originally 
-
-  roundDisplays.forEach(display => {
-    display.classList.remove("hidden");
-  });
-}
-  */
-
 function determineRound() {
   roundNumber++;
-  let playButtonElement =  document.querySelector('.js-play-button');
-    if (roundNumber < 3) {
-    playButtonElement.innerHTML = `PLAY ROUND ${roundNumber + 1}`;
-    } else {
-      playButtonElement.classList.add('hidden');
-    }
+  let playButtonElement = document.querySelector('.js-play-button');
+  let allRoundSections = document.querySelectorAll('.js-round-display');
+  let resultsSectionElement = allRoundSections[allRoundSections.length - 1];
+
+  if (roundNumber < 3) {
+  playButtonElement.innerHTML = `PLAY ROUND ${roundNumber + 1}`;
+  } else {
+    playButtonElement.classList.add('hidden');
+    resultsSectionElement.classList.remove('hidden');
+  }
   }
 
 function determineOutcomes() {
@@ -77,11 +60,11 @@ function displayOutcomes() {
   for(let i = 1; i <= currentOutcomesArray.length; i++) {
     let outcomeElement = document.getElementById(`outcome-${roundNumber}-${i}`);
     if(currentOutcomesArray[i-1] === 1 && livesRemainingArray[i-1] > 0) {
-      outcomeElement.innerHTML = 'passed';
+      outcomeElement.innerHTML = `<i class="fas fa-sun fa-3x"></i> <p>Lives remaining: ${livesRemainingArray[i-1]}</p>`;
     } else if (currentOutcomesArray[i-1] === 0 && livesRemainingArray[i-1] > 0) {
-      outcomeElement.innerHTML = 'failed';
+      outcomeElement.innerHTML = `<i class="fas fa-cloud fa-3x"></i> <p>Lives remaining: ${livesRemainingArray[i-1]-1}</p>`;
     } else {
-      outcomeElement.innerHTML = 'eliminated in round 2';
+      outcomeElement.innerHTML = `<i class="fas fa-cloud fa-3x hide"></i> <p>Eliminated in round 2</p>`;
     }
   }
 }
