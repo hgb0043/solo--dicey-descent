@@ -36,12 +36,14 @@ h1 {
 }
 
 .player {
-    background-color: white;
-    color: #333; /* Dark gray text for contrast */
-    padding: 1rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    margin: 0.5rem;
+  flex: 1; /* ← makes each player box grow equally */
+  background-color: white;
+  color: #333;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin: 0.5rem 0; /* optional: remove left/right margin so the gap handles spacing */
+  text-align: center;
 }
 
 .player.red {
@@ -91,4 +93,8 @@ h1 {
 .play-button:hover {
   background-color: #ff6633;
   transform: scale(1.05);
+}
+
+.hide {
+  color: white;
 }
